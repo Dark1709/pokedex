@@ -1,9 +1,27 @@
 <script setup>
 import HeaderApp from "../components/HeaderApp.vue";
+import SearchPokemon from "../components/SearchPokemon.vue";
+import RandomPokemon from "../components/RandomPokemon.vue";
 </script>
 
 <template>
-  <HeaderApp />
+  <header class="header">
+    <HeaderApp />   
+  </header>
+  
+  <main class="main-container">
+    <SearchPokemon />
+    <RandomPokemon />    
+  </main>
+
 </template>
 
-<style scoped></style>
+<style scoped>
+.main-container {
+  display: flex;
+  padding: 10%;
+  justify-content: center;
+  
+}
+
+</style>
