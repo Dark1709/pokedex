@@ -2,42 +2,49 @@
 
 <template>
   <header class="header">
-    <picture class="image">
-      <img src="" alt="logo" />
+    <picture class="logo">
+      <img src="../assets/img/logo.png" alt="logo" />
     </picture>
 
     <nav class="navbar">
-      <a href="#">Home</a>
-      <a href="#">Pokemons</a>
-      <a href="">GitHub</a>
+      <a href="#">HOME</a>
+      <a href="#">POKEMONS</a>
+      <button class="main-button">
+        <a href="">GITHUB</a>
+      </button>
     </nav>
   </header>
 </template>
 
 <style scoped>
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--background);
-  padding: 1rem 1rem;
+  padding: 2% 10%;
 }
-.image {
-  background-color: blue;
-  width: 30vh;
-  height: 7vh;
+
+.logo img{
+  width: 9rem;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-a {
+.main-button{
+  background-color: var(--color-pop);
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.navbar a {
   color: white;
   text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1rem;
   margin: 0 1rem;
+  font-weight: 400;
 }
 </style>
