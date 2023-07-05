@@ -39,6 +39,10 @@
     height: 2rem;
 }
 
+.search p{
+    margin-bottom: 4rem;
+}
+
 .search-bar input{
     background: none;
     width: 100%;

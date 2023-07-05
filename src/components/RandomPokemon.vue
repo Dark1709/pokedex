@@ -1,9 +1,24 @@
-<script setup></script>
+<script setup>
+import { getImage } from '../services/pokemon.service'
+import { ref, onMounted } from 'vue';
+
+const pokemonImage = ref('');
+
+onMounted(async () => {
+  try {
+    const [,imageUrl] = await getImage();
+    pokemonImage.value = imageUrl;
+  } catch {
+    throw new Error('Ha ocurrido un error al obtener la imagen del Pokémon');
+  }
+});
+
+</script>
 
 <template>
     <section class="pokemon-container">
         <picture class="pokemon-image">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="pokemon" />
+            <img :src="pokemonImage" alt="pokemonImage" />
         </picture>
     </section>
 </template>
