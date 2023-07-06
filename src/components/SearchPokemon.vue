@@ -36,7 +36,12 @@
 
 .search-bar{
     background-color: var(--medium-background);
-    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    height:3rem;
+    border-radius: 10px;
+    padding: 0;
+    align-items: center;
 }
 
 .search p{
@@ -47,9 +52,10 @@
     background: none;
     width: 100%;
     height: 100%;
-    background-color: var(--medium-background);
     border-radius: 10px;
     border: none;
+    outline: none;
+    padding: 0 1rem;
 }
 
 </style>
