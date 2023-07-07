@@ -31,7 +31,8 @@ onMounted(async () => {
 .pokemon-container {
   background-color: var(--medium-background);
   border-radius: 1.5rem;
-  width: 500px;
+  min-width: 400px;
+  max-width: 500px;
   height: 500px;
   margin-left: 13rem;
   position: relative;
@@ -43,4 +44,22 @@ onMounted(async () => {
   top: 3rem;
   left: -8rem;
 }
+
+@media screen and (max-width: 1400px) {
+
+  .pokemon-container {
+    background: none;
+    position: fixed;
+  }
+
+
+  .pokemon-image img {
+    max-width: none;
+    position: relative;
+    top:25rem;
+    padding: 0 4rem;
+  }
+
+}
+
 </style>

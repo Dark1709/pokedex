@@ -1,4 +1,18 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const activeTab = ref('home');
+const isNavbarOpen = ref(false);
+
+function selectTab(tab) {
+  activeTab.value = tab;
+  isNavbarOpen.value = false;
+}
+
+function toggleNavbar() {
+  isNavbarOpen.value = !isNavbarOpen.value;
+}
+</script>
 
 <template>
   <header class="header">
@@ -7,11 +21,16 @@
     </picture>
 
     <nav class="navbar">
-      <a href="#">HOME</a>
-      <a href="#">POKEMONS</a>
-      <button class="main-button">
-        <a href=""> GITHUB</a>
-        <img src="../assets/icons/github-icon.svg" alt="logo-github" />
+      <div class="navbar-links" :class="{ 'open': isNavbarOpen }">
+        <a href="/" :class="{ 'active': activeTab === 'home' }" @click="selectTab('home')">HOME</a>
+        <a href="#" :class="{ 'active': activeTab === 'pokemons' }" @click="selectTab('pokemons')">POKEMONS</a>
+        <button class="main-button">
+          <a href="https://github.com/yulsep">GITHUB</a>
+          <img src="../assets/icons/github-icon.svg" alt="logo-github" />
+        </button>
+      </div>
+      <button class="navbar-toggle" @click="toggleNavbar">
+        <span class="toggle-icon"><i class='bx bx-chevron-down'></i></span>
       </button>
     </nav>
   </header>
@@ -20,9 +39,11 @@
 <style scoped>
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 2% 10%;
+  width: 100%;
 }
 
 .logo img {
@@ -33,6 +54,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+  max-height: 100%;
+  transition: max-height 0.3s ease-in-out;
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
+
+.open {
+  display: none;
 }
 
 .navbar a {
@@ -43,15 +81,42 @@
   font-weight: 400;
 }
 
+.navbar a.active {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
 .main-button {
   background-color: var(--color-pop);
   border: none;
   border-radius: 0.3rem;
   display: flex;
   align-items: center;
+  padding: 0.2rem 0;
+  height: 100%;
+  width: 7rem;
+  justify-content: center;
+  margin-left: 1rem;
 }
 
 .main-button a {
   margin: 0 1rem 0 0;
 }
+
+.bx-chevron-down{
+  font-size: 2rem;
+  color: var(--color-pop);
+}
+
+@media screen and (min-width: 768px) {
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  .navbar-links {
+    flex-direction: row;
+  }
+}
+
 </style>
