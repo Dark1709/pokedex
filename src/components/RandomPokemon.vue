@@ -1,12 +1,15 @@
 <script setup>
+import Popper from "vue3-popper";
 import { getImage } from "../services/pokemon.service";
 import { ref, onMounted } from "vue";
 
+const pokemonName = ref("");
 const pokemonImage = ref("");
 
 onMounted(async () => {
   try {
-    const [, imageUrl] = await getImage();
+    const [name, imageUrl] = await getImage();
+    pokemonName.value = name;
     pokemonImage.value = imageUrl;
   } catch {
     throw new Error("Ha ocurrido un error al obtener la imagen del Pokémon");
@@ -16,9 +19,11 @@ onMounted(async () => {
 
 <template>
   <section class="pokemon-container">
-    <picture class="pokemon-image">
-      <img :src="pokemonImage" alt="pokemonImage" />
-    </picture>
+    <Popper :content="pokemonName" hover>
+      <picture class="pokemon-image">
+        <img :src="pokemonImage" alt="pokemonImage" />
+      </picture>
+    </Popper>
   </section>
 </template>
 

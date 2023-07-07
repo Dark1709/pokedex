@@ -29,12 +29,12 @@ export async function getCharactersList() {
 }
 
 function getRandom(min, max) {
-  return Math.random() * (max - min) + min;
+  return Math.round(Math.random() * (max - min) + min);
 }
 
 export async function getImage() {
   try {
-    let id = Math.round(getRandom(1, 898));
+    let id = getRandom(1, 898);
     let url = API.replace("id", `${id}`);
     const response = await fetch(url);
     const data = await response.json();
