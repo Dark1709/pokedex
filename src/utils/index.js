@@ -1,3 +1,3 @@
-import { API, SPECIES, POKEMOS, SPRITES } from "./constants";
+import { API, SPECIES, POKEMONS, SPRITES } from "./constants";
 
-export { API, SPECIES, POKEMOS, SPRITES };
+export { API, SPECIES, POKEMONS, SPRITES };

@@ -1,4 +1,4 @@
-import { API, SPRITES, POKEMOS } from "../utils";
+import { API, SPRITES, POKEMONS } from "../utils";
 
 export async function getCharacterById(id) {
   try {
@@ -19,7 +19,7 @@ export async function getCharacterById(id) {
 
 export async function getCharactersList() {
   try {
-    const response = await fetch(POKEMOS);
+    const response = await fetch(POKEMONS);
     const data = await response.json();
 
     return data.results;

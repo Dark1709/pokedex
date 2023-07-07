@@ -10,7 +10,8 @@
       <a href="#">HOME</a>
       <a href="#">POKEMONS</a>
       <button class="main-button">
-        <a href="">GITHUB</a>
+        <a href=""> GITHUB</a>
+        <img src="../assets/icons/github-icon.svg" alt="logo-github" />
       </button>
     </nav>
   </header>
@@ -24,7 +25,7 @@
   padding: 2% 10%;
 }
 
-.logo img{
+.logo img {
   width: 9rem;
 }
 
@@ -34,17 +35,23 @@
   align-items: center;
 }
 
-.main-button{
-  background-color: var(--color-pop);
-  border: none;
-  border-radius: 0.3rem;
-}
-
 .navbar a {
   color: white;
   text-decoration: none;
   font-size: 1rem;
   margin: 0 1rem;
   font-weight: 400;
+}
+
+.main-button {
+  background-color: var(--color-pop);
+  border: none;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.main-button a {
+  margin: 0 1rem 0 0;
 }
 </style>

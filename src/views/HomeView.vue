@@ -6,14 +6,13 @@ import RandomPokemon from "../components/RandomPokemon.vue";
 
 <template>
   <header class="header">
-    <HeaderApp />   
+    <HeaderApp />
   </header>
-  
+
   <main class="main-container">
     <SearchPokemon />
-    <RandomPokemon />    
+    <RandomPokemon />
   </main>
-
 </template>
 
 <style scoped>
@@ -21,7 +20,12 @@ import RandomPokemon from "../components/RandomPokemon.vue";
   display: flex;
   padding: 10%;
   justify-content: center;
-  
 }
 
+@media (min-device-width: 320px) and (max-width: 400px) {
+  .main-container {
+    padding: 2%;
+    flex-direction: column;
+  }
+}
 </style>
