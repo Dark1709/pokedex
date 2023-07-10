@@ -19,8 +19,7 @@ import RandomPokemon from "../components/RandomPokemon.vue";
 .main-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 10%;
+  padding: 5% 10%;
   justify-content: center;
 }
-
 </style>

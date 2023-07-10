@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
-const activeTab = ref('home');
+const activeTab = ref("home");
 const isNavbarOpen = ref(false);
 
 function selectTab(tab) {
@@ -21,16 +21,26 @@ function toggleNavbar() {
     </picture>
 
     <nav class="navbar">
-      <div class="navbar-links" :class="{ 'open': isNavbarOpen }">
-        <a href="/" :class="{ 'active': activeTab === 'home' }" @click="selectTab('home')">HOME</a>
-        <a href="#" :class="{ 'active': activeTab === 'pokemons' }" @click="selectTab('pokemons')">POKEMONS</a>
+      <div class="navbar-links" :class="{ open: isNavbarOpen }">
+        <a
+          href="/"
+          :class="{ active: activeTab === 'home' }"
+          @click="selectTab('home')"
+          >HOME</a
+        >
+        <a
+          href="#"
+          :class="{ active: activeTab === 'pokemons' }"
+          @click="selectTab('pokemons')"
+          >POKEMONS</a
+        >
         <button class="main-button">
           <a href="https://github.com/yulsep">GITHUB</a>
           <img src="../assets/icons/github-icon.svg" alt="logo-github" />
         </button>
       </div>
       <button class="navbar-toggle" @click="toggleNavbar">
-        <span class="toggle-icon"><i class='bx bx-chevron-down'></i></span>
+        <span class="toggle-icon"><i class="bx bx-chevron-down"></i></span>
       </button>
     </nav>
   </header>
@@ -43,7 +53,6 @@ function toggleNavbar() {
   justify-content: space-between;
   align-items: center;
   padding: 2% 10%;
-  width: 100%;
 }
 
 .logo img {
@@ -63,10 +72,10 @@ function toggleNavbar() {
   padding: 1rem;
   text-align: center;
   max-height: 100%;
-  transition: max-height 0.3s ease-in-out;
-  position: absolute;
+  transition: 0.3s ease-in-out;
   top: 100%;
   right: 0;
+  align-items: center;
 }
 
 .open {
@@ -103,20 +112,19 @@ function toggleNavbar() {
   margin: 0 1rem 0 0;
 }
 
-.bx-chevron-down{
+.bx-chevron-down {
   font-size: 2rem;
   color: var(--color-pop);
 }
 
 @media screen and (min-width: 768px) {
-
   .navbar-toggle {
     display: none;
   }
 
   .navbar-links {
     flex-direction: row;
+    position: absolute;
   }
 }
-
 </style>

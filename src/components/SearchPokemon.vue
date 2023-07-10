@@ -29,7 +29,6 @@ async function getPokemon() {
           type="text"
           placeholder="Enter the name or id of the Pokemon(1-898)..."
         />
-        <button @click="getPokemon()"></button>
       </div>
     </div>
   </section>
@@ -79,20 +78,18 @@ async function getPokemon() {
 }
 
 @media screen and (max-width: 1400px) {
-
-  .search-container{
+  .search-container {
     width: 100%;
   }
 
-  .title{
+  .title {
     text-align: center;
     margin-bottom: 4rem;
   }
 
-  .title h2{
+  .title h2 {
     font-size: 2.3rem;
     line-height: 3rem;
   }
-
 }
 </style>

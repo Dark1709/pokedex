@@ -2,7 +2,7 @@ import { API, SPRITES, POKEMONS } from "../utils";
 
 export async function getCharacterById(id) {
   try {
-    let url = API.replace("id", `${id}`);
+    let url = API.replace("{id}", `${id}`);
     const response = await fetch(url);
     const data = await response.json();
 
@@ -28,14 +28,14 @@ export async function getCharactersList() {
   }
 }
 
-function getRandom(min, max) {
+function getRandomId(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
 export async function getImage() {
   try {
-    let id = getRandom(1, 898);
-    let url = API.replace("id", `${id}`);
+    let id = getRandomId(1, 898);
+    let url = API.replace("{id}", `${id}`);
     const response = await fetch(url);
     const data = await response.json();
 
