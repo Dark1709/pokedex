@@ -22,17 +22,17 @@ function toggleNavbar() {
 
     <nav class="navbar">
       <div class="navbar-links" :class="{ open: isNavbarOpen }">
-        <a
-          href="/"
-          :class="{ active: activeTab === 'home' }"
-          @click="selectTab('home')"
-          >HOME</a
-        >
-        <a
-          href="#"
+        <router-link :to="{
+          name: 'home',
+        }" :class="{ active: activeTab === 'home' }"
+          @click="selectTab('home')">HOME</router-link>
+        <router-link
+          :to="{
+            name: 'pokemons',
+          }"
           :class="{ active: activeTab === 'pokemons' }"
           @click="selectTab('pokemons')"
-          >POKEMONS</a
+          >POKEMONS</router-link
         >
         <button class="main-button">
           <a href="https://github.com/yulsep">GITHUB</a>
