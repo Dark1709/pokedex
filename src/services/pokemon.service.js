@@ -1,3 +1,4 @@
+import { ref } from 'vue';
 import { API, SPRITES, POKEMONS } from "../utils";
 
 export async function getCharacterById(id) {
