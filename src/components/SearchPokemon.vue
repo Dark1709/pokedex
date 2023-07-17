@@ -1,16 +1,6 @@
 <script setup>
-import { ref } from "vue";
 import FieldSearch from "./common/FieldSearch.vue";
 
-const searchPokemon = ref("");
-
-async function getPokemon() {
-  const response = await fetch(
-    `https://pokeapi.co/api/v2/pokemon/${searchPokemon.value}`
-  );
-  const data = await response.json();
-  console.log(data);
-}
 </script>
 
 <template>

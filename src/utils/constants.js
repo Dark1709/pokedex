@@ -6,4 +6,3 @@ export const POKEMONS = `${BASE_URL}pokemon?limit=30&offset=0`;
 
 export const SPRITES =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png";
-

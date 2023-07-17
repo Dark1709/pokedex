@@ -10,7 +10,7 @@ import FieldSearch from "../common/FieldSearch.vue";
 <style scoped>
 h2 {
   font-size: 2.2rem;
-  font-weight: 600400;
+  font-weight: 600;
   text-shadow: var(--color-pop) 2px 5px;
   line-height: 60px;
 }

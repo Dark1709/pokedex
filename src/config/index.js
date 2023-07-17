@@ -1,6 +1,6 @@
 import { NetworkError } from "../core/errors";
 
-export const API = {
+export const API_FETCH = {
   /**
    * @param {string} url ->URL To fetch
    * @param {object} options ->Fetch options

@@ -1,12 +1,10 @@
-import { SPRITES } from "../utils";
-
 export function pokemonFactory(pokemon) {
   return {
     id: pokemon.id || "",
     name: pokemon.name || "",
     image: pokemon.sprites?.other?.dream_world?.front_default
       ? pokemon.sprites?.other?.dream_world?.front_default
-      : SPRITES.replace("id", `${id}`) || "",
+      : SPRITES.replace("id", `${this.id}`) || "",
     types:
       pokemon.types?.map((type) => {
         return {
@@ -24,5 +22,12 @@ export function pokemonFactory(pokemon) {
         };
       }) || [],
     abilities: pokemon.abilities?.map((ability) => ability.ability.name) || [],
+    /*     species:
+      pokemon.species?.map((specie) => {
+        return {
+          name: specie.name,
+          url: `https://pokeapi.co/api/v2/${specie}`,
+        };
+      }) || [], */
   };
 }

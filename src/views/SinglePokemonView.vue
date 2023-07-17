@@ -13,6 +13,7 @@ const pokemonWeight = ref('');
 const pokemonBaseExperience = ref('');
 const pokemonAbilities = ref([]);
 const pokemonStats = ref([]);
+const pokemonSpecies = ref([])
 
 const route = getCurrentInstance().proxy.$route;
 
@@ -28,6 +29,7 @@ onMounted(async () => {
     pokemonBaseExperience.value = pokemon.baseExperience;
     pokemonAbilities.value = pokemon.abilities;
     pokemonStats.value = pokemon.stats;
+    pokemonSpecies.value = pokemon.species;
   } catch {
     throw new Error('Ha ocurrido un error al obtener el Pokémon');
   }
