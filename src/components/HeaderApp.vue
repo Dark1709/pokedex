@@ -29,9 +29,7 @@ function toggleNavbar() {
           >HOME</router-link
         >
         <router-link
-          :to="{
-            name: 'pokemons',
-          }"
+          :to="{name: 'pokemons' }"
           :class="{ active: activeTab === 'pokemons' }"
           @click="selectTab('pokemons')"
           >POKEMONS</router-link
