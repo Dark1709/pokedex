@@ -1,6 +1,9 @@
-export const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
-export const SPECIES = "https://pokeapi.co/api/v2/pokemon-species/";
-export const POKEMONS = "https://pokeapi.co/api/v2/pokemon?limit=30&offset=0";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
+export const API = `${BASE_URL}pokemon`;
+export const SPECIES = `${BASE_URL}pokemon-species/`;
+export const POKEMONS = `${BASE_URL}pokemon?limit=30&offset=0`;
 
 export const SPRITES =
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/id.png";
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png";
+

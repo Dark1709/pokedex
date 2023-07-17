@@ -1,15 +1,16 @@
-import { BASE_URL, SPRITES, POKEMONS } from "../utils";
+import { API, SPRITES, POKEMONS } from "../utils";
+
 import { pokemonAdapter } from "./adapters";
-import { API } from "../config/";
+import { API_FETCH } from "../config/";
 
 export async function getCharacterByName(name) {
-  const externalPokemon = await API.GET(`${BASE_URL}/${name}`);
+  const externalPokemon = await API_FETCH.GET(`${API}/${name}`);
   return pokemonAdapter().toPokemonBussines(externalPokemon);
 }
 
 export async function getCharactersList() {
   try {
-    const response = await API.GET(POKEMONS);
+    const response = await API_FETCH.GET(POKEMONS);
     return response.results;
   } catch {
     throw new Error("Ha ocurrido un error al obtener los personajes");
@@ -23,7 +24,7 @@ function getRandomId(min, max) {
 export async function getImage() {
   try {
     let id = getRandomId(1, 898);
-    const data = await API.GET(`${BASE_URL}/${id}`);
+    const data = await API_FETCH.GET(`${API}/${id}`);
 
     return [
       data.name,
