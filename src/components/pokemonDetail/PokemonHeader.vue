@@ -25,5 +25,18 @@ pokemonName: {
     .header-card {
     display: flex;
     width: 100%;
+    margin-bottom: 2rem;
     }
+
+    .header-card h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-shadow: var(--color-pop) 2px 5px;
+    line-height: 60px;
+    }
+
+    .pokemon-id {
+    margin-right: 2rem;
+    }
+
 </style>

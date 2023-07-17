@@ -1,7 +1,7 @@
 <template>
     <div class="pokemon-evolutions">
       <header>
-        <h3>Evolución</h3>
+        <h3>Evolution</h3>
       </header>
       <div class="pokemon-evolutions-container">
         <div class="pokemon-evolution-single">
