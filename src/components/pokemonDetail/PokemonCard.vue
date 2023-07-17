@@ -42,12 +42,12 @@ const toIconType = (pokemonType) => {
 
 const toTypeColor = (pokemonType) => {
   const type = types.find((type) => type.name === pokemonType);
-  return type.typeColor;
+  return type.bgColor;
 }
 
 const toIconColor = (pokemonType) => {
   const type = types.find((type) => type.name === pokemonType);
-  return type.iconColor;
+  return type.typeColor;
 }
 
 function capitalize(sentence){
