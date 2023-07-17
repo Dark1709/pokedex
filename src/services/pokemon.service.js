@@ -1,29 +1,17 @@
-import { ref } from 'vue';
 import { API, SPRITES, POKEMONS } from "../utils";
 
-export async function getCharacterById(id) {
-  try {
-    let url = API.replace("{id}", `${id}`);
-    const response = await fetch(url);
-    const data = await response.json();
+import { pokemonAdapter } from "./adapters";
+import { API_FETCH } from "../config/";
 
-    return [
-      data.name,
-      data.id,
-      data.types[0].type.name,
-      SPRITES.replace("id", `${data.id}`),
-    ];
-  } catch {
-    throw new Error("Ha ocurrido un error al obtener los personajes");
-  }
+export async function getCharacterByName(name) {
+  const externalPokemon = await API_FETCH.GET(`${API}/${name}`);
+  return pokemonAdapter().toPokemonBussines(externalPokemon);
 }
 
 export async function getCharactersList() {
   try {
-    const response = await fetch(POKEMONS);
-    const data = await response.json();
-
-    return data.results;
+    const response = await API_FETCH.GET(POKEMONS);
+    return response.results;
   } catch {
     throw new Error("Ha ocurrido un error al obtener los personajes");
   }
@@ -36,9 +24,7 @@ function getRandomId(min, max) {
 export async function getImage() {
   try {
     let id = getRandomId(1, 898);
-    let url = API.replace("{id}", `${id}`);
-    const response = await fetch(url);
-    const data = await response.json();
+    const data = await API_FETCH.GET(`${API}/${id}`);
 
     return [
       data.name,
