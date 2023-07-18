@@ -3,12 +3,10 @@ import { defineProps } from 'vue';
 import PokemonEvolutions from './PokemonEvolutions.vue';
 import {types} from '../../mocks/pokemon_types'
 import Popper from "vue3-popper";
+import { SPRITES } from "../../utils";
 
 const props = defineProps({
-  pokemonImage: {
-    type: String,
-    required: true,
-  },
+
   pokemonTypes: {
     type: Array,
     required: true,
@@ -33,6 +31,10 @@ const props = defineProps({
     type: Array,
     required: true,
   },
+  pokemonId: {
+    type: String,
+    required: true,
+  },
 });
 
 const toIconType = (pokemonType) => {
@@ -54,6 +56,9 @@ function capitalize(sentence){
   return sentence.charAt(0).toUpperCase() + sentence.slice(1);
 }
 
+function buildImage(id) {
+  return SPRITES.replace("{id}", id);
+}
 
 </script>
           
@@ -64,7 +69,7 @@ function capitalize(sentence){
         backgroundImage: pokemonTypes.length > 1 ? `linear-gradient(to top, ${pokemonTypes.map(type => toTypeColor(type.name)).join(', ')})` : 'none'
       }">
         <picture>
-          <img :src="pokemonImage" :alt="pokemonName" />
+          <img :src="buildImage(pokemonId)" />
         </picture>
         <div class="types" >
           <button v-for="type in pokemonTypes" :key="type.name" class="pokemon-type" :style="{ backgroundColor: toIconColor(type.name) }">

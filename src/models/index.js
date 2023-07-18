@@ -2,9 +2,6 @@ export function pokemonFactory(pokemon) {
   return {
     id: pokemon.id || "",
     name: pokemon.name || "",
-    image: pokemon.sprites?.other?.dream_world?.front_default
-      ? pokemon.sprites?.other?.dream_world?.front_default
-      : SPRITES.replace("id", `${this.id}`) || "",
     types:
       pokemon.types?.map((type) => {
         return {

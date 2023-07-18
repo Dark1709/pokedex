@@ -3,6 +3,10 @@ import { API, SPRITES, POKEMONS } from "../utils";
 import { pokemonAdapter } from "./adapters";
 import { API_FETCH } from "../config/";
 
+function buildImage(id) {
+  return SPRITES.replace("{id}", id);
+}
+
 export async function getCharacterByName(name) {
   const externalPokemon = await API_FETCH.GET(`${API}/${name}`);
   return pokemonAdapter().toPokemonBussines(externalPokemon);
@@ -30,7 +34,7 @@ export async function getImage() {
       data.name,
       data.sprites.other.dream_world.front_default
         ? data.sprites.other.dream_world.front_default
-        : SPRITES.replace("id", `${id}`),
+        : buildImage(id),
     ];
   } catch (error) {
     throw new Error("Ha ocurrido un error al obtener la imagen");

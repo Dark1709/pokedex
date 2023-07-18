@@ -47,6 +47,7 @@ onMounted(async () => {
         :pokemonBaseExperience="pokemonBaseExperience"
         :pokemonAbilities="pokemonAbilities"
         :pokemonStats="pokemonStats"
+        :pokemonId="pokemonId"
         />
     </div>
 </template>
