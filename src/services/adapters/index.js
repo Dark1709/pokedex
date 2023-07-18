@@ -1,4 +1,4 @@
-import { pokemonFactory } from "../../models";
+import { pokemonFactory, pokemonImageFactory } from "../../models";
 
 export function pokemonAdapter() {
   function toPokemonBussines(externalPokemon) {
@@ -7,5 +7,15 @@ export function pokemonAdapter() {
 
   return {
     toPokemonBussines,
+  };
+}
+
+export function pokemonImageAdapter() {
+  function toPokemonImageBussines(externalPokemon) {
+    return pokemonImageFactory(externalPokemon);
+  }
+
+  return {
+    toPokemonImageBussines,
   };
 }
