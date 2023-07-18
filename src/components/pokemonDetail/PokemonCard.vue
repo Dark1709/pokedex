@@ -1,9 +1,9 @@
 <script setup>
 import { defineProps } from 'vue';
+import { toBackgroundColor, toCapitalize } from '../../utils'
+import { buildImage } from '../../services/pokemon.service';
 import PokemonEvolutions from './PokemonEvolutions.vue';
-import {types} from '../../mocks/pokemon_types'
-import Popper from "vue3-popper";
-import { SPRITES } from "../../utils";
+import PokemonType from '../common/PokemonType.vue';
 
 const props = defineProps({
 
@@ -37,46 +37,16 @@ const props = defineProps({
   },
 });
 
-const toIconType = (pokemonType) => {
-  const type = types.find((type) => type.name === pokemonType);
-  return type.image;
-}
-
-const toTypeColor = (pokemonType) => {
-  const type = types.find((type) => type.name === pokemonType);
-  return type.bgColor;
-}
-
-const toIconColor = (pokemonType) => {
-  const type = types.find((type) => type.name === pokemonType);
-  return type.typeColor;
-}
-
-function capitalize(sentence){
-  return sentence.charAt(0).toUpperCase() + sentence.slice(1);
-}
-
-function buildImage(id) {
-  return SPRITES.replace("{id}", id);
-}
-
 </script>
           
 <template>
     <article class="card">
-      <section class="pokemon-picture" :style="{
-        backgroundColor: pokemonTypes.length === 1 ? toTypeColor(pokemonTypes[0].name) : 'none',
-        backgroundImage: pokemonTypes.length > 1 ? `linear-gradient(to top, ${pokemonTypes.map(type => toTypeColor(type.name)).join(', ')})` : 'none'
-      }">
+      <section class="pokemon-picture" :style="toBackgroundColor(pokemonTypes)">
         <picture>
-          <img :src="buildImage(pokemonId)" />
+          <img :src="buildImage(pokemonId)" alt="pokemon-image"/>
         </picture>
         <div class="types" >
-          <button v-for="type in pokemonTypes" :key="type.name" class="pokemon-type" :style="{ backgroundColor: toIconColor(type.name) }">
-            <Popper arrow :content="type.name" hover placement="bottom">
-              <img :src="toIconType(type.name)" :alt="type.name"/>
-            </Popper>
-          </button>
+          <PokemonType v-for="type in pokemonTypes" :key="type.name" :typeName="type.name" />
         </div>
       </section>
       <section class="pokemon-detail">
@@ -96,14 +66,14 @@ function buildImage(id) {
           <div class="pokemon-information-container">
             <h3>Abilities</h3>
             <ul>
-              <li v-for="ability in pokemonAbilities" :key="ability">{{ capitalize(ability) }}</li>
+              <li v-for="ability in pokemonAbilities" :key="ability">{{ toCapitalize(ability) }}</li>
             </ul>
           </div>
           <div class="pokemon-information-container" id="stats">
             <h3>Stats</h3>
             <select>
               <option v-for="(stat, name) in pokemonStats" :key="name">
-                {{ capitalize(stat.name) }}: {{ stat.value }}
+                {{ toCapitalize(stat.name) }}: {{ stat.value }}
               </option>
             </select>
           </div>
@@ -201,13 +171,13 @@ function buildImage(id) {
     text-align: center;
   }
 
-  .pokemon-type{
+/*   .pokemon-type{
     border-radius: 50%;
     margin: 1rem;
     max-width: 3rem;
     max-height: 3rem;
     padding: 4%;
-  }
+  } */
 
   </style>
   

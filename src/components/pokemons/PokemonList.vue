@@ -1,8 +1,8 @@
 <script setup>
-import { defineProps } from "vue";
+import { ref, onMounted, defineProps } from "vue";
+import { buildImage, getCharacterByName } from "../../services/pokemon.service";
 import PokemonItem from "./PokemonItem.vue";
 import ButtonLoadMore from "./ButtonLoadMore.vue";
-import { SPRITES } from "../../utils";
 
 defineProps(["pokemonList"]);
 
@@ -11,9 +11,7 @@ function getId(url) {
   return urlSplit[urlSplit.length - 2];
 }
 
-function buildImage(id) {
-  return SPRITES.replace("{id}", id);
-}
+
 </script>
 
 <template>

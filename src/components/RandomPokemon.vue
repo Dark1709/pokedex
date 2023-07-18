@@ -1,6 +1,6 @@
 <script setup>
 import Popper from "vue3-popper";
-import { getImage } from "../services/pokemon.service";
+import { getRandomImage } from "../services/pokemon.service";
 import { ref, onMounted } from "vue";
 
 const pokemonName = ref("");
@@ -8,7 +8,7 @@ const pokemonImage = ref("");
 
 onMounted(async () => {
   try {
-    const [name, imageUrl] = await getImage();
+    const [name, imageUrl] = await getRandomImage();
     pokemonName.value = name;
     pokemonImage.value = imageUrl;
   } catch {
