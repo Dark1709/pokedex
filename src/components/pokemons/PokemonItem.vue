@@ -16,15 +16,18 @@ onMounted(async () => {
     throw new Error("Ha ocurrido un error al obtener el Pokémon");
   }
 });
-
 </script>
 
 <template>
-    <div class="pokemon-card" :style="toBackgroundColor(pokemonTypes)">
+  <div class="pokemon-card" :style="toBackgroundColor(pokemonTypes)">
     <section class="header-card">
       <p class="id">#{{ id }}</p>
-      <div class="types" >
-          <PokemonType v-for="type in pokemonTypes" :key="type.name" :typeName="type.name" />
+      <div class="types">
+        <PokemonType
+          v-for="type in pokemonTypes"
+          :key="type.name"
+          :typeName="type.name"
+        />
       </div>
     </section>
     <section class="detail-pokemon">
@@ -58,13 +61,6 @@ onMounted(async () => {
   color: black;
 }
 
-.pokemon-type{
-    margin: 0.4rem;
-    max-width: 2.5rem;
-    max-height: 2.5rem;
-  }
-
-
 .detail-pokemon {
   display: flex;
   flex-direction: column;
@@ -85,5 +81,4 @@ h3 {
 .detail-pokemon img:hover {
   padding: 0.1rem;
 }
-
 </style>
