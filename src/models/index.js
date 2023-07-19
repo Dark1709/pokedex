@@ -1,6 +1,6 @@
 export function pokemonFactory(pokemon) {
   return {
-    id: pokemon.id || "",
+    id: String(pokemon.id) || "",
     name: pokemon.name || "",
     types:
       pokemon.types?.map((type) => {
@@ -8,9 +8,9 @@ export function pokemonFactory(pokemon) {
           name: type.type.name,
         };
       }) || [],
-    height: pokemon.height || "",
-    weight: pokemon.weight || "",
-    baseExperience: pokemon.base_experience || 0,
+    height: String(pokemon.height) || "",
+    weight: String(pokemon.weight) || "",
+    baseExperience: String(pokemon.base_experience) || 0,
     stats:
       pokemon.stats?.map((stat) => {
         return {

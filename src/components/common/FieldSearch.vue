@@ -1,4 +1,9 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+
+const searchPokemon = ref("")
+
+</script>
 
 <template>
   <div class="search-bar">

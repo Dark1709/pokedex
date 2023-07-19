@@ -49,6 +49,7 @@ onMounted(async () => {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .header-card {
