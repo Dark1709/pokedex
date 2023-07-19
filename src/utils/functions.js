@@ -1,3 +1,4 @@
+import { useRouter } from "vue-router";
 import { types } from "../mocks/pokemon_types";
 
 export const toIconType = (pokemonType) => {
@@ -38,4 +39,6 @@ export function toBackgroundColor(pokemonTypes) {
   };
 }
 
-
+export function redirectToPokemonCard(pokemonName, router) {
+  router.push({ name: "singlePokemon", params: { name: pokemonName } });
+}

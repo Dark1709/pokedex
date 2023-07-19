@@ -5,6 +5,7 @@ import {
   toIconColor,
   toCapitalize,
   toBackgroundColor,
+  redirectToPokemonCard,
 } from "./functions";
 
 export {
@@ -17,4 +18,5 @@ export {
   toIconColor,
   toCapitalize,
   toBackgroundColor,
+  redirectToPokemonCard,
 };

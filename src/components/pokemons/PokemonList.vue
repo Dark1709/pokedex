@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted, defineProps } from "vue";
-import { buildImage, getCharacterByName } from "../../services/pokemon.service";
+import {  defineProps } from "vue";
+import { buildImage } from "../../services/pokemon.service";
 import PokemonItem from "./PokemonItem.vue";
 import ButtonLoadMore from "./ButtonLoadMore.vue";
 

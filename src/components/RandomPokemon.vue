@@ -1,10 +1,13 @@
 <script setup>
 import Popper from "vue3-popper";
-import { getRandomImage } from "../services/pokemon.service";
 import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+import { getRandomImage } from "../services/pokemon.service";
+import { redirectToPokemonCard } from "../utils";
 
 const pokemonName = ref("");
 const pokemonImage = ref("");
+const router = useRouter();
 
 onMounted(async () => {
   try {
@@ -15,10 +18,12 @@ onMounted(async () => {
     throw new Error("Ha ocurrido un error al obtener la imagen del Pokémon");
   }
 });
+
+
 </script>
 
 <template>
-  <section class="pokemon-container">
+  <section class="pokemon-container"  @click="redirectToPokemonCard(pokemonName, router)">
     <picture class="pokemon-image">
       <Popper arrow :content="pokemonName" hover placement="top">
         <img :src="pokemonImage" alt="pokemonImage" loading="lazy" />

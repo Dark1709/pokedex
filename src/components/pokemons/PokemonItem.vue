@@ -2,11 +2,13 @@
 import { defineProps, ref, onMounted } from "vue";
 import PokemonType from "../common/PokemonType.vue";
 import { getCharacterByName } from "../../services/pokemon.service";
-import { toBackgroundColor } from "../../utils";
+import { useRouter } from "vue-router";
+import { toBackgroundColor, redirectToPokemonCard } from "../../utils";
 
 const props = defineProps(["id", "image", "name"]);
 
 const pokemonTypes = ref([]);
+const router = useRouter();
 
 onMounted(async () => {
   try {
@@ -16,10 +18,11 @@ onMounted(async () => {
     throw new Error("Ha ocurrido un error al obtener el Pokémon");
   }
 });
+
 </script>
 
 <template>
-  <div class="pokemon-card" :style="toBackgroundColor(pokemonTypes)">
+  <div class="pokemon-card" :style="toBackgroundColor(pokemonTypes)" @click="redirectToPokemonCard(name, router)">
     <section class="header-card">
       <p class="id">#{{ id }}</p>
       <div class="types">
