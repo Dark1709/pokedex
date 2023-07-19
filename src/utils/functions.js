@@ -37,3 +37,5 @@ export function toBackgroundColor(pokemonTypes) {
     backgroundImage: backgroundImage,
   };
 }
+
+

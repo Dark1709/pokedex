@@ -42,3 +42,5 @@ export async function getRandomImage() {
     throw new Error("Ha ocurrido un error al obtener la imagen");
   }
 }
+
+

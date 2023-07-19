@@ -26,9 +26,14 @@ const props = defineProps({
   border-radius: 50%;
   margin-left: 1rem;
   padding: 0.5rem;
+  max-width: 2.2rem;
+  max-height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .pokemon-type img {
-  max-width: 1.5rem;
+  max-width: 1.2rem;
 }
 </style>

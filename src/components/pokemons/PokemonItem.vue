@@ -61,6 +61,10 @@ onMounted(async () => {
   color: black;
 }
 
+.types {
+  display: flex;
+}
+
 .detail-pokemon {
   display: flex;
   flex-direction: column;
