@@ -1,32 +1,21 @@
 <script setup>
 import Popper from "vue3-popper";
-import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
-import { getRandomImage } from "../services/pokemon.service";
-import { redirectToPokemonCard } from "../utils";
-
-const pokemonName = ref("");
-const pokemonImage = ref("");
+import { useGetRandomPokemon } from "../composable/home/useGetRandomPokemon";
 const router = useRouter();
+const { pokemon } = useGetRandomPokemon()
 
-onMounted(async () => {
-  try {
-    const [name, imageUrl] = await getRandomImage();
-    pokemonName.value = name;
-    pokemonImage.value = imageUrl;
-  } catch {
-    throw new Error("Ha ocurrido un error al obtener la imagen del Pokémon");
-  }
-});
-
+function redirectToPokemonCard(pokemonName) {
+  router.push({ name: "singlePokemon", params: { name: pokemonName } });
+}
 
 </script>
 
 <template>
-  <section class="pokemon-container"  @click="redirectToPokemonCard(pokemonName, router)">
+  <section class="pokemon-container"  @click="redirectToPokemonCard(pokemon.name, router)">
     <picture class="pokemon-image">
-      <Popper arrow :content="pokemonName" hover placement="top">
-        <img :src="pokemonImage" alt="pokemonImage" loading="lazy" />
+      <Popper arrow :content="pokemon.name" hover placement="top">
+        <img :src="pokemon.image" alt="pokemonImage" loading="lazy" />
       </Popper>
     </picture>
   </section>
@@ -51,6 +40,7 @@ onMounted(async () => {
   height: 500px;
   margin-left: 13rem;
   position: relative;
+  cursor: pointer;
 }
 
 .pokemon-image img {
