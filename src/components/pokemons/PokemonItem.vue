@@ -22,7 +22,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="pokemon-card" :style="toBackgroundColor(pokemonTypes)" @click="redirectToPokemonCard(name, router)">
+  <button class="pokemon-card" :style="toBackgroundColor(pokemonTypes)" @click="redirectToPokemonCard(name, router)">
     <section class="header-card">
       <p class="id">#{{ id }}</p>
       <div class="types">
@@ -39,7 +39,7 @@ onMounted(async () => {
       </picture>
       <h3>{{ name.toUpperCase() }}</h3>
     </section>
-  </div>
+  </button>
 </template>
 
 <style scoped>
@@ -49,7 +49,6 @@ onMounted(async () => {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 20px;
-  cursor: pointer;
 }
 
 .header-card {
@@ -57,6 +56,7 @@ onMounted(async () => {
   align-items: center;
   justify-content: space-between;
   padding: 0 0.5rem 0 1rem;
+  width: 100%;
 }
 
 .id {
@@ -74,6 +74,7 @@ onMounted(async () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .pokemonImage {
   max-height: 200px;

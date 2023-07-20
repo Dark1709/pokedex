@@ -10,7 +10,7 @@ export function pokemonFactory(pokemon) {
       }) || [],
     height: String(pokemon.height) || "",
     weight: String(pokemon.weight) || "",
-    baseExperience: String(pokemon.base_experience) || 0,
+    baseExperience: String(pokemon.base_experience) || "",
     stats:
       pokemon.stats?.map((stat) => {
         return {
