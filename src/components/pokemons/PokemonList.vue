@@ -5,13 +5,16 @@ import PokemonItem from "./PokemonItem.vue";
 import ButtonLoadMore from "./ButtonLoadMore.vue";
 
 defineProps(["pokemonList"]);
+const emit = defineEmits(["loadMore"]);
 
 function getId(url) {
   const urlSplit = url.split("/");
   return urlSplit[urlSplit.length - 2];
 }
 
-
+function loadMore() {
+  emit("loadMore");
+}
 </script>
 
 <template>
@@ -26,7 +29,7 @@ function getId(url) {
       />
     </section>
     <section class="container-button">
-      <ButtonLoadMore />
+      <ButtonLoadMore @load-more="loadMore()" />
     </section>
   </div>
 </template>

@@ -12,9 +12,9 @@ export async function getCharacterByName(name) {
   return pokemonAdapter().toPokemonBussines(externalPokemon);
 }
 
-export async function getCharactersList() {
+export async function getCharactersList(offset = 0) {
   try {
-    const response = await API_FETCH.GET(POKEMONS);
+    const response = await API_FETCH.GET(POKEMONS + offset);
     return response.results;
   } catch {
     throw new Error("Ha ocurrido un error al obtener los personajes");
