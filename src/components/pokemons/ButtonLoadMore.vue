@@ -1,8 +1,10 @@
-<script setup></script>
+<script setup>
+defineEmits(["loadMore"]);
+</script>
 
 <template>
   <div>
-    <button>LOAD MORE</button>
+    <button @click="$emit('loadMore')">LOAD MORE</button>
   </div>
 </template>
 
