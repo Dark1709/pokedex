@@ -2,7 +2,7 @@ export const types = [
   {
     id: 0,
     name: "fire",
-    image: "src/assets/img/types/fire.png",
+    image: new URL("../assets/img/types/fire.png", import.meta.url),
     bgColor: "#FFB971",
     typeColor: "#dc872f",
     color3: "",
@@ -10,7 +10,7 @@ export const types = [
   {
     id: 1,
     name: "water",
-    image: "src/assets/img/types/water.png",
+    image: new URL("../assets/img/types/water.png", import.meta.url),
     bgColor: "#8CC4E2",
     typeColor: "#539DDF",
     color3: "",
@@ -18,7 +18,7 @@ export const types = [
   {
     id: 2,
     name: "grass",
-    image: "src/assets/img/types/grass.png",
+    image: new URL("../assets/img/types/grass.png", import.meta.url),
     bgColor: "#A8FF98",
     typeColor: "#5FBD58",
     color3: "",
@@ -26,7 +26,7 @@ export const types = [
   {
     id: 3,
     name: "electric",
-    image: "src/assets/img/types/electric.png",
+    image: new URL("../assets/img/types/electric.png", import.meta.url),
     bgColor: "#ffe661",
     typeColor: "#f2d94e",
     color3: "",
@@ -34,7 +34,7 @@ export const types = [
   {
     id: 4,
     name: "psychic",
-    image: "src/assets/img/types/psychic.png",
+    image: new URL("../assets/img/types/psychic.png", import.meta.url),
     bgColor: "#ffa5da",
     typeColor: "#ff2ca8",
     color3: "",
@@ -42,7 +42,7 @@ export const types = [
   {
     id: 5,
     name: "ice",
-    image: "src/assets/img/types/ice.png",
+    image: new URL("../assets/img/types/ice.png", import.meta.url),
     bgColor: "#8cf5e4",
     typeColor: "#75d0c1",
     color3: "",
@@ -50,7 +50,7 @@ export const types = [
   {
     id: 6,
     name: "fighting",
-    image: "src/assets/img/types/fighting.png",
+    image: new URL("../assets/img/types/fighting.png", import.meta.url),
     bgColor: "#da7488",
     typeColor: "#d3425f",
     color3: "",
@@ -58,7 +58,7 @@ export const types = [
   {
     id: 7,
     name: "flying",
-    image: "src/assets/img/types/flying.png",
+    image: new URL("../assets/img/types/flying.png", import.meta.url),
     bgColor: "#bbc9e4",
     typeColor: "#a1bbec",
     color3: "",
@@ -66,7 +66,7 @@ export const types = [
   {
     id: 8,
     name: "poison",
-    image: "src/assets/img/types/poison.png",
+    image: new URL("../assets/img/types/poison.png", import.meta.url),
     bgColor: "#d5a1e3",
     typeColor: "#b763cf",
     color3: "",
@@ -74,7 +74,7 @@ export const types = [
   {
     id: 9,
     name: "ground",
-    image: "src/assets/img/types/ground.png",
+    image: new URL("../assets/img/types/ground.png", import.meta.url),
     bgColor: "#e59a73",
     typeColor: "#da7c4d",
     color3: "",
@@ -82,7 +82,7 @@ export const types = [
   {
     id: 10,
     name: "rock",
-    image: "src/assets/img/types/rock.png",
+    image: new URL("../assets/img/types/rock.png", import.meta.url),
     bgColor: "#c9bb8a",
     typeColor: "#a38c21",
     color3: "",
@@ -90,7 +90,7 @@ export const types = [
   {
     id: 11,
     name: "bug",
-    image: "src/assets/img/types/bug.png",
+    image: new URL("../assets/img/types/bug.png", import.meta.url),
     bgColor: "#badf5f",
     typeColor: "#92bc2c",
     color3: "",
@@ -98,7 +98,7 @@ export const types = [
   {
     id: 12,
     name: "dragon",
-    image: "src/assets/img/types/dragon.png",
+    image: new URL("../assets/img/types/dragon.png", import.meta.url),
     bgColor: "#88a2e8",
     typeColor: "#0c69c8",
     color3: "",
@@ -106,7 +106,7 @@ export const types = [
   {
     id: 13,
     name: "ghost",
-    image: "src/assets/img/types/ghost.png",
+    image: new URL("../assets/img/types/ghost.png", import.meta.url),
     bgColor: "#8291e0",
     typeColor: "#5f6dbc",
     color3: "",
@@ -114,7 +114,7 @@ export const types = [
   {
     id: 14,
     name: "dark",
-    image: "src/assets/img/types/dark.png",
+    image: new URL("../assets/img/types/dark.png", import.meta.url),
     bgColor: "#8e8c94",
     typeColor: "#595761",
     color3: "",
@@ -122,7 +122,7 @@ export const types = [
   {
     id: 15,
     name: "steel",
-    image: "src/assets/img/types/steel.png",
+    image: new URL("../assets/img/types/steel.png", import.meta.url),
     bgColor: "#9fb8b9",
     typeColor: "#5695a3",
     color3: "",
@@ -130,7 +130,7 @@ export const types = [
   {
     id: 16,
     name: "fairy",
-    image: "src/assets/img/types/fairy.png",
+    image: new URL("../assets/img/types/fairy.png", import.meta.url),
     bgColor: "#fdb9e9",
     typeColor: "#ee90e6",
     color3: "",
@@ -138,7 +138,7 @@ export const types = [
   {
     id: 17,
     name: "normal",
-    image: "src/assets/img/types/normal.png",
+    image: new URL("../assets/img/types/normal.png", import.meta.url),
     bgColor: "#dcdcdc",
     typeColor: "#a0a29f",
     color3: "",
