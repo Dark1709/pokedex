@@ -16,9 +16,15 @@ function toggleNavbar() {
 
 <template>
   <header class="header">
-    <picture class="logo">
-      <img src="../assets/img/logo.png" alt="logo" />
-    </picture>
+    <router-link
+          :to="{ name: 'home' }"
+          :class="{ active: activeTab === 'home' }"
+          @click="selectTab('home')"
+          >
+      <picture class="logo">
+        <img src="../assets/img/logo.png" alt="logo"/>
+      </picture>
+    </router-link>
 
     <nav class="navbar">
       <div class="navbar-links" :class="{ open: isNavbarOpen }">

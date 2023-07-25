@@ -8,8 +8,12 @@ export function buildImage(id) {
 }
 
 export async function getCharacterByName(name) {
-  const externalPokemon = await API_FETCH.GET(`${API}/${name}`);
-  return pokemonAdapter().toPokemonBussines(externalPokemon);
+  try {
+    const externalPokemon = await API_FETCH.GET(`${API}/${name}`);
+    return pokemonAdapter().toPokemonBussines(externalPokemon);
+  } catch (error) {
+    return null;
+  }
 }
 
 const pokemonToShow = 10;
