@@ -1,5 +1,5 @@
 import { API, SPRITES, POKEMONS } from "../utils";
-
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 import { pokemonAdapter, pokemonImageAdapter } from "./adapters";
 import { API_FETCH } from "../config/";
 
@@ -12,9 +12,14 @@ export async function getCharacterByName(name) {
   return pokemonAdapter().toPokemonBussines(externalPokemon);
 }
 
-export async function getCharactersList(offset = 0) {
+const pokemonToShow = 10;
+
+export async function getCharactersList(groupIndex = 0) {
   try {
-    const response = await API_FETCH.GET(POKEMONS + offset);
+    const offset = groupIndex * pokemonToShow;
+    const response = await API_FETCH.GET(
+      `${BASE_URL}pokemon?limit=${pokemonToShow}&offset=${offset}`
+    );
     return response.results;
   } catch {
     throw new Error("Ha ocurrido un error al obtener los personajes");
@@ -43,4 +48,7 @@ export async function getRandomImage() {
   }
 }
 
-
+export function getId(url) {
+  const urlSplit = url.split("/");
+  return urlSplit[urlSplit.length - 2];
+}
