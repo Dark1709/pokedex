@@ -1,5 +1,4 @@
 <script setup>
-import {  defineProps } from "vue";
 import { buildImage } from "../../services/pokemon.service";
 import PokemonItem from "./PokemonItem.vue";
 import ButtonLoadMore from "./ButtonLoadMore.vue";

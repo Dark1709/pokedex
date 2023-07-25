@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from "vue";
 import { toBackgroundColor, toCapitalize } from "../../utils";
 import { buildImage } from "../../services/pokemon.service";
 import PokemonEvolutions from "./PokemonEvolutions.vue";
