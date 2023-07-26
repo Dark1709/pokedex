@@ -1,4 +1,4 @@
-import { API, SPECIES, POKEMONS, SPRITES } from "./constants";
+import { API, SPECIES, POKEMONS, SPRITES, EVOLUTIONS } from "./constants";
 import {
   toIconType,
   toTypeColor,
@@ -13,6 +13,7 @@ export {
   SPECIES,
   POKEMONS,
   SPRITES,
+  EVOLUTIONS,
   toIconType,
   toTypeColor,
   toIconColor,

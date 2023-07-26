@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from "vue";
 import { toBackgroundColor, toCapitalize } from "../../utils";
 import { buildImage } from "../../services/pokemon.service";
 import PokemonEvolutions from "./PokemonEvolutions.vue";
@@ -31,6 +30,10 @@ const props = defineProps({
     required: true,
   },
   pokemonId: {
+    type: String,
+    required: true,
+  },
+  pokemonName: {
     type: String,
     required: true,
   },
@@ -82,7 +85,7 @@ const props = defineProps({
           </select>
         </div>
       </div>
-      <pokemon-evolutions />
+      <pokemon-evolutions v-if="pokemonName" :name="pokemonName"/>
     </section>
   </article>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import PokemonType from "../common/PokemonType.vue";
 import { getCharacterByName } from "../../services/pokemon.service";
 import { useRouter } from "vue-router";

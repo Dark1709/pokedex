@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/components": "^10.2.1",
+    "@vueuse/core": "^10.2.1",
     "pnpm": "^8.6.6",
     "vue": "^3.2.47",
     "vue-router": "^4.2.4",

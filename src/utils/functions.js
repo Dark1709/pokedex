@@ -1,5 +1,5 @@
-import { useRouter } from "vue-router";
 import { types } from "../mocks/pokemon_types";
+import { getCharacterByName } from "../services/pokemon.service";
 
 export const toIconType = (pokemonType) => {
   const type = types.find((type) => type.name === pokemonType);
@@ -39,6 +39,16 @@ export function toBackgroundColor(pokemonTypes) {
   };
 }
 
-export function redirectToPokemonCard(pokemonName, router) {
-  router.push({ name: "singlePokemon", params: { name: pokemonName } });
+export async function redirectToPokemonCard(pokemonName, router) {
+  try {
+    const pokemonData = await getCharacterByName(pokemonName);
+
+    if (pokemonData) {
+      router.push({ name: "singlePokemon", params: { name: pokemonName } });
+    } else {
+      alert("El Pokémon no existe.");
+    }
+  } catch (error) {
+    alert("Ha ocurrido un error al obtener los datos del Pokémon.");
+  }
 }

@@ -1,7 +1,15 @@
 <script setup>
 import { ref } from 'vue';
+import { redirectToPokemonCard } from '../../utils';
+import { useRouter } from "vue-router";
 
 const searchPokemon = ref("")
+const router = useRouter();
+
+const search = () => {
+  let pokemonName = searchPokemon.value.trim().toLowerCase()
+  redirectToPokemonCard(pokemonName, router)
+}
 
 </script>
 
@@ -12,6 +20,7 @@ const searchPokemon = ref("")
       v-model="searchPokemon"
       type="text"
       placeholder="Enter the name or id of the Pokemon(1-898)..."
+      @keyup.enter="search"
     />
   </div>
 </template>

@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from "vue";
 import Popper from "vue3-popper";
 import { toIconType, toIconColor } from "../../utils";
 
