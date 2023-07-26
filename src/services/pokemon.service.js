@@ -1,4 +1,4 @@
-import { API, SPRITES, POKEMONS } from "../utils";
+import { API, SPRITES, POKEMONS, SPECIES, EVOLUTIONS } from "../utils";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 import { pokemonAdapter, pokemonImageAdapter } from "./adapters";
 import { API_FETCH } from "../config/";
@@ -46,7 +46,7 @@ export async function getRandomImage() {
 
     const { name, image } = pokemonImageAdapter().toPokemonImageBussines(data);
 
-    return [name, image ? image : buildImage(id)];
+    return [name, image];
   } catch (error) {
     throw new Error("Ha ocurrido un error al obtener la imagen");
   }
@@ -55,4 +55,14 @@ export async function getRandomImage() {
 export function getId(url) {
   const urlSplit = url.split("/");
   return urlSplit[urlSplit.length - 2];
+}
+
+export async function getSpeciesbyName(name) {
+  const response = await API_FETCH.GET(`${SPECIES}/${name}`);
+  return response;
+}
+
+export async function getEvolutionChain(url) {
+  const response = await API_FETCH.GET(url);
+  return response;
 }

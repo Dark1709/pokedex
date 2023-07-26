@@ -33,6 +33,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  pokemonName: {
+    type: String,
+    required: true,
+  },
 });
 </script>
 
@@ -81,7 +85,7 @@ const props = defineProps({
           </select>
         </div>
       </div>
-      <pokemon-evolutions />
+      <pokemon-evolutions v-if="pokemonName" :name="pokemonName"/>
     </section>
   </article>
 </template>
